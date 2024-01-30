@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright (C) 2016-2020  Daniel Dolejška
+ * Copyright (C) 2016-2023  Daniel Dolejška
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,7 +17,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-//  Autoload required classes
-require_once __DIR__ . '/vendor/autoload.php';
+namespace RiotAPI\LeagueAPI\Objects;
 
-date_default_timezone_set('Europe/Prague');
+
+/**
+ *   Class Level
+ *
+ * Used in:
+ *   lol-challenges (v1)
+ *     - @see LeagueAPI::getChallengePercentiles
+ *       @link https://developer.riotgames.com/apis#lol-challenges-v1/GET_getChallengePercentiles
+ *
+ * @package RiotAPI\LeagueAPI\Objects
+ */
+class Level extends ApiObject
+{
+}

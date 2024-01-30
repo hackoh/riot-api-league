@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright (C) 2016-2021  Daniel Dolejška
+ * Copyright (C) 2016-2022  Daniel Dolejška
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,36 +19,47 @@
 
 namespace RiotAPI\LeagueAPI\Objects;
 
-
 /**
- *   Class RuneDto
+ *   Class MatchTimelineInfoDto
  *
  * Used in:
- *   match (v4)
- *     - @see LeagueAPI::getMatchByTournamentCode
- *       @link https://developer.riotgames.com/apis#match-v4/GET_getMatchByTournamentCode
- *     - @see LeagueAPI::getMatch
- *       @link https://developer.riotgames.com/apis#match-v4/GET_getMatch
+ *   match (v5)
+ *     - @see LeagueAPI::getTimeline
+ *       @link https://developer.riotgames.com/apis#match-v5/GET_getTimeline
  *
  * @package RiotAPI\LeagueAPI\Objects
  */
-class RuneDto extends ApiObject
+class MatchTimelineInfoDto extends ApiObject
 {
 	/**
 	 * Available when received from:
-	 *   - @see LeagueAPI::getMatchByTournamentCode
-	 *   - @see LeagueAPI::getMatch
+	 *   - @see LeagueAPI::getTimeline
 	 *
-	 * @var int $runeId
+	 * @var int $frameInterval
 	 */
-	public $runeId;
+	public int $frameInterval;
 
 	/**
 	 * Available when received from:
-	 *   - @see LeagueAPI::getMatchByTournamentCode
-	 *   - @see LeagueAPI::getMatch
+	 *   - @see LeagueAPI::getTimeline
 	 *
-	 * @var int $rank
+	 * @var MatchFrameDto[] $frames
 	 */
-	public $rank;
+	public array $frames;
+
+	/**
+	 * Available when received from:
+	 *   - @see LeagueAPI::getTimeline
+	 *
+	 * @var int $gameId
+	 */
+	public int $gameId;
+
+	/**
+	 * Available when received from:
+	 *   - @see LeagueAPI::getTimeline
+	 *
+	 * @var MatchParticipantDto[] $participants
+	 */
+	public array $participants;
 }

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright (C) 2016-2021  Daniel Dolejška
+ * Copyright (C) 2016-2023  Daniel Dolejška
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,38 +21,38 @@ namespace RiotAPI\LeagueAPI\Objects;
 
 
 /**
- *   Class ParticipantIdentityDto
+ *   Class ApexPlayerInfoDto
  *
  * Used in:
- *   match (v4)
- *     - @see LeagueAPI::getMatchByTournamentCode
- *       @link https://developer.riotgames.com/apis#match-v4/GET_getMatchByTournamentCode
- *     - @see LeagueAPI::getMatch
- *       @link https://developer.riotgames.com/apis#match-v4/GET_getMatch
+ *   lol-challenges (v1)
+ *     - @see LeagueAPI::getChallengeLeaderboards
+ *       @link https://developer.riotgames.com/apis#lol-challenges-v1/GET_getChallengeLeaderboards
  *
  * @package RiotAPI\LeagueAPI\Objects
  */
-class ParticipantIdentityDto extends ApiObject
+class ApexPlayerInfoDto extends ApiObject
 {
 	/**
 	 * Available when received from:
-	 *   - @see LeagueAPI::getMatchByTournamentCode
-	 *   - @see LeagueAPI::getMatch
+	 *   - @see LeagueAPI::getChallengeLeaderboards
 	 *
-	 * @var int $participantId
+	 * @var string $puuid
 	 */
-	public $participantId;
+	public string $puuid;
 
 	/**
-	 * Player information not included in the response for custom matches.
-	 * Custom matches are considered private unless a tournament code was used
-	 * to create the match.
-	 *
 	 * Available when received from:
-	 *   - @see LeagueAPI::getMatchByTournamentCode
-	 *   - @see LeagueAPI::getMatch
+	 *   - @see LeagueAPI::getChallengeLeaderboards
 	 *
-	 * @var PlayerDto $player
+	 * @var int $value
 	 */
-	public $player;
+	public int $value;
+
+	/**
+	 * Available when received from:
+	 *   - @see LeagueAPI::getChallengeLeaderboards
+	 *
+	 * @var int $position
+	 */
+	public int $position;
 }
